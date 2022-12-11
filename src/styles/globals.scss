@@ -1,16 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Inter&display=swap');
+@layer base {
+  *,
+  *::before,
+  *::after {
+    @apply m-0 p-0 box-border font-inter;
+  }
 
-*,
-*::before,
-*::after {
-  @apply m-0 p-0 box-border font-inter;
+  html,
+  body {
+    @apply min-h-screen;
+  }
+
+  a,
+  button {
+    @apply hover:cursor-pointer;
+  }
 }
 
-html,
-body {
-  @apply min-h-screen;
+.blink-cursor {
+  @apply relative after:content-[''] after:absolute after:-right-3 after:w-2 after:h-5 after:bg-slate-800 after:animate-blink;
+}
+
+.blink-cursor.blink-inverse {
+  @apply after:text-slate-100 after:bg-slate-100;
 }
