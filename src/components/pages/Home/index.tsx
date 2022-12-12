@@ -1,4 +1,5 @@
 import { BaseLayout } from '@components:global';
+import { Offer } from '@components:screens';
 
 export const Home = () => {
   return (
@@ -11,7 +12,7 @@ export const Home = () => {
           author: 'andrewench',
         }}
       >
-        123
+        <Offer />
       </BaseLayout>
     </div>
   );

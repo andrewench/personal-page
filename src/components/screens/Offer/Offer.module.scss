@@ -1,0 +1,29 @@
+.box {
+  @apply relative bg-neutral-800 h-screen pt-20 bg-[url('/images/preview.jpg')] bg-cover before:content-[''] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:backdrop-blur-lg items-center justify-center;
+}
+
+.box::before {
+  background: linear-gradient(
+    180deg,
+    hsla(0, 0%, 100%, 0),
+    rgba(42, 41, 41, 0.8) 63%,
+    rgba(38, 38, 40, 0.897) 77%,
+    #18181b 90%
+  );
+}
+
+.flexContainer {
+  @apply text-center z-[1000] gap-2;
+}
+
+.primaryHeading {
+  @apply font-caveat text-white text-5xl;
+}
+
+.secondaryHeading {
+  @apply font-caveat text-slate-200 text-2xl;
+}
+
+.jumpTo {
+  @apply absolute left-[calc(50%_-_12px)] bottom-10 m-auto text-2xl text-sky-200 animate-bounce;
+}

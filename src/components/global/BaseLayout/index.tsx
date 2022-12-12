@@ -30,7 +30,7 @@ export const BaseLayout: FC<IBaseLayout> = ({
 
       <Header />
 
-      <main>{children}</main>
+      {children}
     </div>
   );
 };

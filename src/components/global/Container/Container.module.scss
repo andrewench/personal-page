@@ -1,0 +1,35 @@
+@use 'sass:list';
+@use 'sass:string';
+
+.flexContainer {
+  @apply flex;
+}
+
+.flexCol {
+  @apply flex-col;
+}
+
+.flexFullCenter {
+  @apply items-center justify-center;
+}
+
+$alignRow: 'start', 'center', 'end', 'between', 'around', 'evenly';
+$alignColumn: 'start', 'center', 'end', 'baseline', 'stretch';
+
+@mixin generateClass($prefix, $prefixValue, $value) {
+  $firstLetter: string.slice($prefixValue, 1, 1);
+  $uppercaseFirstLetter: string.to-upper-case($firstLetter);
+  $otherLetters: string.slice($prefixValue, 2);
+
+  .#{$prefix}#{$uppercaseFirstLetter}#{$otherLetters} {
+    @apply #{$value};
+  }
+}
+
+@each $column in $alignColumn {
+  @include generateClass('align', $column, 'items-#{$column}');
+}
+
+@each $row in $alignRow {
+  @include generateClass('content', $row, 'justify-#{$row}');
+}

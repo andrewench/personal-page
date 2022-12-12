@@ -21,7 +21,8 @@
       "@components:global": ["./components/global"],
       "@components:screens": ["./components/screens"],
       "@components:pages": ["./components/pages"],
-      "@types": ["./types"]
+      "@types": ["./types"],
+      "@data": ["./data"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

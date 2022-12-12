@@ -1,19 +1,22 @@
-import { RowContainer } from '@components:global';
+import { Container } from '@components:global';
 import { Logotype } from '@components:layout';
+import { flexAlign } from '@types';
 import { HeaderLink } from '@components:ui';
+import { HeaderLinks } from '@data';
 import styles from './Header.module.scss';
 
 export const Header = () => {
   return (
-    <RowContainer className={styles.box}>
+    <Container flex align={flexAlign.CENTER} className={styles.box}>
       <Logotype title="andrewench" description="> Person.init();" href="/" />
 
-      <RowContainer className={styles.nav}>
-        <HeaderLink href="#skills">Skills</HeaderLink>
-        <HeaderLink href="#portfolio">Portfolio</HeaderLink>
-        <HeaderLink href="#plan">Plan</HeaderLink>
-        <HeaderLink href="#about">About</HeaderLink>
-      </RowContainer>
-    </RowContainer>
+      <Container flex className={styles.nav}>
+        {HeaderLinks.map(({ href, label }, idx) => (
+          <HeaderLink className={styles.link} href={href} key={idx}>
+            {label}
+          </HeaderLink>
+        ))}
+      </Container>
+    </Container>
   );
 };

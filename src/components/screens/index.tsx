@@ -1,1 +1,1 @@
-export {};
+export { Offer } from './Offer';

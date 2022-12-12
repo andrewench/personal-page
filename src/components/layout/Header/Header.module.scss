@@ -1,7 +1,7 @@
 .box {
-  @apply h-20 px-48 w-full sticky top-0 z-[9000] justify-between;
+  @apply h-20 px-48 w-full fixed top-0 z-[9000] justify-between items-center;
 }
 
-.nav {
-  @apply gap-10;
+.link {
+  @apply h-20 pt-7 relative px-6 before:content-[''] before:h-[2px] before:bg-cyan-400 before:block before:absolute before:z-[10] before:bottom-0 before:left-0 hover:before:w-full before:w-0 before:transition-all before:duration-300;
 }
