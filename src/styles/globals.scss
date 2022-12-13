@@ -20,6 +20,18 @@
   button {
     @apply hover:cursor-pointer;
   }
+
+  body {
+    @apply scroll-smooth;
+  }
+
+  body::-webkit-scrollbar {
+    @apply w-1 h-1 bg-[#080808f1];
+  }
+
+  body::-webkit-scrollbar-thumb {
+    @apply bg-sky-500 rounded-full;
+  }
 }
 
 .blink-cursor {

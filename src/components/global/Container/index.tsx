@@ -4,6 +4,7 @@ import { flexAlign, flexContent } from '@types';
 import styles from './Container.module.scss';
 
 interface IContainer {
+  id?: string;
   className?: string;
   flex: boolean;
   align?: flexAlign;
@@ -14,6 +15,7 @@ interface IContainer {
 }
 
 export const Container: FC<IContainer> = ({
+  id = '',
   className = '',
   flex,
   column,
@@ -24,6 +26,7 @@ export const Container: FC<IContainer> = ({
 }) => {
   return (
     <div
+      id={id}
       className={classNames(
         {
           [styles.flexContainer]: flex,

@@ -1,6 +1,6 @@
-import { Header } from '@components:layout';
-import Head from 'next/head';
 import { FC, ReactNode } from 'react';
+import Head from 'next/head';
+import { Header, Footer } from '@components:layout';
 
 interface IBaseLayout {
   title: string;
@@ -25,12 +25,17 @@ export const BaseLayout: FC<IBaseLayout> = ({
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
         <meta name="author" content={author} />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+        />
       </Head>
 
       <Header />
 
       {children}
+
+      <Footer />
     </div>
   );
 };

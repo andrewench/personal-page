@@ -1,7 +1,15 @@
 .box {
-  @apply h-20 px-48 w-full fixed top-0 z-[9000] justify-between items-center;
+  @apply h-20 px-48 w-full fixed top-0 z-[9000] justify-between items-center transition-colors duration-300;
+}
+
+.box.sticky {
+  @apply bg-slate-300;
 }
 
 .link {
-  @apply h-20 pt-7 relative px-6 before:content-[''] before:h-[2px] before:bg-cyan-400 before:block before:absolute before:z-[10] before:bottom-0 before:left-0 hover:before:w-full before:w-0 before:transition-all before:duration-300;
+  @apply h-20 pt-1 relative px-6 hover:before:w-full before:w-0 before:transition-all before:duration-300 before:content-[''] before:h-[2px] before:bg-cyan-400 before:block before:absolute before:z-[10] before:bottom-0 before:left-0 hover:text-white;
+}
+
+.activeLink {
+  @apply before:w-full text-white;
 }

@@ -1,5 +1,5 @@
 .box {
-  @apply relative bg-neutral-800 h-screen pt-20 bg-[url('/images/preview.jpg')] bg-cover before:content-[''] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:backdrop-blur-lg items-center justify-center;
+  @apply relative bg-neutral-800 h-screen pt-20 bg-[url('/images/preview.jpg')] bg-cover before:content-[''] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:backdrop-blur-lg items-center justify-center pb-20;
 }
 
 .box::before {
@@ -17,11 +17,11 @@
 }
 
 .primaryHeading {
-  @apply font-caveat text-white text-5xl;
+  @apply font-caveat text-white text-5xl z-[2000];
 }
 
 .secondaryHeading {
-  @apply font-caveat text-slate-200 text-2xl;
+  @apply font-caveat text-slate-200 text-2xl z-[2000];
 }
 
 .jumpTo {

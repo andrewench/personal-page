@@ -1,22 +1,28 @@
 import { FC } from 'react';
-import Link from 'next/link';
 import classNames from 'classnames';
+import ScrollTo from 'react-scroll-into-view';
 import styles from './HeaderLink.module.scss';
 
 interface IHeaderLink {
-  href: string;
+  anchor: string;
   className?: string;
   children: string;
 }
 
-export const HeaderLink: FC<IHeaderLink> = ({ href, className, children }) => {
+export const HeaderLink: FC<IHeaderLink> = ({
+  anchor,
+  className,
+  children,
+}) => {
   return (
-    <Link
-      href={href}
-      className={classNames(styles.link, className)}
-      draggable={false}
-    >
-      {children}
-    </Link>
+    <ScrollTo selector={anchor} smooth scrollOptions={{ block: 'start' }}>
+      <button
+        type="button"
+        className={classNames(styles.link, className)}
+        draggable={false}
+      >
+        {children}
+      </button>
+    </ScrollTo>
   );
 };

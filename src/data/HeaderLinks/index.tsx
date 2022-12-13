@@ -1,23 +1,23 @@
 interface IHeaderLinks {
-  href: string;
+  hash: string;
   label: string;
 }
 
 export const HeaderLinks: IHeaderLinks[] = [
   {
-    href: '#skills',
+    hash: '#skills',
     label: 'Skills',
   },
   {
-    href: '#portfolio',
+    hash: '#portfolio',
     label: 'Portfolio',
   },
   {
-    href: '#plans',
+    hash: '#plans',
     label: 'Plans',
   },
   {
-    href: '#about',
+    hash: '#about',
     label: 'About',
   },
 ];
