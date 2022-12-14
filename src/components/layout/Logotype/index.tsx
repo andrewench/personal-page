@@ -13,7 +13,13 @@ export const Logotype: FC<ILogotype> = ({ title, description }) => {
     <ScrollTo selector="#top" smooth scrollOptions={{ block: 'start' }}>
       <button type="button" className={styles.link}>
         <p className={styles.title}>{title}</p>
-        <p className={classNames(styles.description, 'blink-cursor')}>
+        <p
+          className={classNames(
+            styles.description,
+            'blink-cursor',
+            'blink-inverse'
+          )}
+        >
           {description}
         </p>
       </button>

@@ -1,0 +1,29 @@
+@mixin drawTriangle() {
+  @apply after:content-[''] after:absolute after:border-transparent after:border-x-[1rem] after:border-t-[1rem] after:border-b-[1rem] after:right-[-2rem];
+}
+
+.box {
+  @apply h-8;
+}
+
+.icon {
+  @apply text-lg;
+}
+
+.user {
+  @include drawTriangle();
+  @apply relative bg-white rounded-l-full gap-1 px-4 text-neutral-600 z-[200] after:border-l-white h-full font-medium;
+}
+
+.branch {
+  @include drawTriangle();
+  @apply relative bg-cyan-500 pl-8 pr-5 gap-1 z-[100] after:border-l-cyan-500 h-full text-white font-medium;
+}
+
+.command {
+  @apply text-slate-100 h-full pl-8 pt-[2px] pr-2 font-medium text-lg after:mt-1 z-[100];
+}
+
+.command.textInverse {
+  @apply text-slate-700;
+}

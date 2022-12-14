@@ -1,15 +1,16 @@
 .box {
-  @apply relative bg-neutral-800 h-screen pt-20 bg-[url('/images/preview.jpg')] bg-cover before:content-[''] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:backdrop-blur-lg items-center justify-center pb-20;
+  @apply relative bg-neutral-800 h-screen pt-20 bg-[url('/images/preview.jpg')] bg-cover bg-fixed before:content-[''] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:backdrop-blur-md items-center justify-center pb-20;
 }
 
 .box::before {
   background: linear-gradient(
-    180deg,
-    hsla(0, 0%, 100%, 0),
-    rgba(42, 41, 41, 0.8) 63%,
-    rgba(38, 38, 40, 0.897) 77%,
-    #18181b 90%
-  );
+      180deg,
+      hsla(0, 0%, 100%, 0),
+      rgba(42, 41, 41, 0.8) 63%,
+      rgba(38, 38, 40, 0.897) 77%,
+      #18181b 90%
+    ),
+    linear-gradient(43deg, #4158d014 0%, #c850c014 46%, #ffcc7014 100%);
 }
 
 .flexContainer {

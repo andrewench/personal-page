@@ -13,6 +13,10 @@
   @apply items-center justify-center;
 }
 
+.grid {
+  flex-wrap: wrap;
+}
+
 $alignRow: 'start', 'center', 'end', 'between', 'around', 'evenly';
 $alignColumn: 'start', 'center', 'end', 'baseline', 'stretch';
 

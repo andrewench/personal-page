@@ -7,6 +7,7 @@ interface IContainer {
   id?: string;
   className?: string;
   flex: boolean;
+  grid?: boolean;
   align?: flexAlign;
   content?: flexContent;
   column?: boolean;
@@ -19,6 +20,7 @@ export const Container: FC<IContainer> = ({
   className = '',
   flex,
   column,
+  grid,
   align,
   content,
   center,
@@ -32,6 +34,7 @@ export const Container: FC<IContainer> = ({
           [styles.flexContainer]: flex,
           [styles.flexCol]: column,
           [styles.flexFullCenter]: center,
+          [styles.grid]: grid,
           [styles.alignStart]: align === flexAlign.START,
           [styles.alignCenter]: align === flexAlign.CENTER,
           [styles.alignBaseline]: align === flexAlign.BASELINE,

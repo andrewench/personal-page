@@ -1,0 +1,20 @@
+.box {
+  @apply relative w-[300px] h-[6px];
+}
+
+.track {
+  @apply absolute left-0 top-0 w-full h-full bg-neutral-800 rounded-full z-40;
+}
+
+.drag {
+  @apply absolute left-0 top-0 w-28 h-full rounded-full bg-cyan-500 z-50 shadow-cyan-500;
+  box-shadow: 0 6px 30px #06b6d450, 0 0 4px #06b6d490;
+}
+
+.tooltip {
+  @apply absolute block w-6 h-6 rounded-md bg-cyan-500 text-neutral-800 font-medium text-center pl-[1px] pt-1 text-[0.75rem] mt-5 -translate-x-3 z-50 before:content-[''] before:absolute before:border-transparent before:border-b-cyan-500 before:border-8 before:z-10 before:-top-[12px] before:left-1;
+}
+
+.tooltip::before {
+  filter: drop-shadow(0 20px 10px #06b6d4);
+}

@@ -15,7 +15,12 @@ export const ScreenContainer: FC<IScreenContainer> = ({
   className,
 }) => {
   return (
-    <Container flex className={classNames(styles.box, className)} id={anchor}>
+    <Container
+      flex
+      column
+      className={classNames(styles.box, className)}
+      id={anchor}
+    >
       {children}
     </Container>
   );
