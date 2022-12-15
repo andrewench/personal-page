@@ -1,3 +1,23 @@
 .box {
-  @apply h-96 bg-slate-200;
+  @apply bg-slate-200;
+}
+
+.showcase {
+  @apply items-start justify-between;
+}
+
+.title {
+  @apply mb-14;
+}
+
+.image {
+  @apply block shadow-xl;
+}
+
+.item {
+  @apply flex items-center;
+}
+
+.stack {
+  @apply gap-3;
 }

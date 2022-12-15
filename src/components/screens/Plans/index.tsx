@@ -1,4 +1,5 @@
-import { ScreenContainer, SectionTitle, CLIMode } from '@components:global';
+import { ScreenContainer } from '@components:global';
+import { SectionTitle, CLIMode } from '@components:ui';
 import classNames from 'classnames';
 import styles from './Plans.module.scss';
 

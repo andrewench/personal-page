@@ -1,0 +1,11 @@
+.item {
+  @apply px-4 py-2 odd:bg-zinc-100 even:bg-zinc-50 first:rounded-t-md last:rounded-b-md;
+}
+
+.label {
+  @apply text-neutral-500 font-medium mr-2;
+}
+
+.value {
+  @apply text-neutral-600;
+}

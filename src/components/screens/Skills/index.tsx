@@ -1,10 +1,10 @@
+import { Container, ScreenContainer } from '@components:global';
 import {
-  Container,
-  ScreenContainer,
+  ProgressBar,
+  ProgressBarBox,
   SectionTitle,
   CLIMode,
-} from '@components:global';
-import { ProgressBar, ProgressBarBox } from '@components:ui';
+} from '@components:ui';
 import { SkillsList } from '@data';
 import styles from './Skills.module.scss';
 
