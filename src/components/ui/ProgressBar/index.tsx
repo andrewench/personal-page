@@ -1,8 +1,19 @@
-import { useCallback, useRef, useState } from 'react';
+import { FC, useCallback, useRef, useState } from 'react';
 import { calculateProgress } from '@utils';
+import classNames from 'classnames';
 import styles from './ProgressBar.module.scss';
 
-export const ProgressBar = ({ percent }: { percent: number }) => {
+export enum ProgressBarMode {
+  LIGHT = 'light',
+  DARK = 'dark',
+}
+
+interface IProgressBar {
+  percent: number;
+  mode?: ProgressBarMode;
+}
+
+export const ProgressBar: FC<IProgressBar> = ({ percent, mode }) => {
   const track = useRef<HTMLDivElement>(null);
   const [dragPosition, setDragPosition] = useState<number>(0);
 
@@ -34,7 +45,12 @@ export const ProgressBar = ({ percent }: { percent: number }) => {
 
   return (
     <div className={styles.box}>
-      <div className={styles.track} ref={track} />
+      <div
+        className={classNames(styles.track, {
+          [styles.trackInverse]: mode === ProgressBarMode.LIGHT,
+        })}
+        ref={track}
+      />
       <div className={styles.drag} ref={renderProgress}>
         <span className={styles.tooltip} style={{ left: `${dragPosition}px` }}>
           {percent}

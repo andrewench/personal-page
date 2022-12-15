@@ -1,5 +1,5 @@
 export { HeaderLink } from './HeaderLink';
-export { ProgressBar } from './ProgressBar';
+export { ProgressBar, ProgressBarMode } from './ProgressBar';
 export { ProgressBarBox } from './ProgressBarBox';
 export { SectionTitle, CLIMode } from './SectionTitle';
 export { ShowcaseList } from './ShowcaseList';

@@ -1,15 +1,28 @@
 import { FC, ReactNode } from 'react';
+import { ProgressBarMode } from '@components:ui';
+import classNames from 'classnames';
 import styles from './ProgressBarBox.module.scss';
 
 interface IProgressBarBox {
   label: string;
+  mode?: ProgressBarMode;
   children: ReactNode;
 }
 
-export const ProgressBarBox: FC<IProgressBarBox> = ({ label, children }) => {
+export const ProgressBarBox: FC<IProgressBarBox> = ({
+  label,
+  mode,
+  children,
+}) => {
   return (
     <div className={styles.box}>
-      <p className={styles.label}>{label}</p>
+      <p
+        className={classNames(styles.label, {
+          [styles.labelInverse]: mode === ProgressBarMode.LIGHT,
+        })}
+      >
+        {label}
+      </p>
       {children}
     </div>
   );

@@ -20,7 +20,7 @@ export const Skills = () => {
         }}
       />
 
-      <Container flex grid className={styles.skills}>
+      <Container flex grid center>
         {SkillsList.map(({ label, percent }, idx) => (
           <ProgressBarBox label={label} key={idx}>
             <ProgressBar percent={percent} />

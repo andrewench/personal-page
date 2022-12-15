@@ -5,3 +5,7 @@
 .label {
   @apply text-neutral-400 font-medium pb-1;
 }
+
+.labelInverse {
+  @apply text-slate-700;
+}

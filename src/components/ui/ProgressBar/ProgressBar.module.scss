@@ -6,6 +6,10 @@
   @apply absolute left-0 top-0 w-full h-full bg-neutral-800 rounded-full z-40;
 }
 
+.trackInverse {
+  @apply bg-[#c0d1db];
+}
+
 .drag {
   @apply absolute left-0 top-0 w-28 h-full rounded-full bg-cyan-500 z-50 shadow-cyan-500;
   box-shadow: 0 6px 30px #06b6d450, 0 0 4px #06b6d490;
