@@ -1,5 +1,8 @@
 import { ReactNode } from 'react';
 
+export { ButtonType } from './ButtonType';
+export { InputType } from './InputType';
+
 export interface IAlignContainer {
   className?: string;
   children: ReactNode;

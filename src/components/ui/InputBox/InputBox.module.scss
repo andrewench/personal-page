@@ -1,0 +1,24 @@
+.box {
+  @apply relative;
+}
+
+.input {
+  @apply w-full px-4 pt-[6px] pb-2 mb-4 block rounded-md input-style;
+}
+
+.filled {
+  @apply input-style--filled;
+}
+
+.label {
+  @apply label-style;
+}
+
+.pinned {
+  @apply label-style--pinned;
+}
+
+.input:focus ~ .label,
+.label.pinned {
+  @apply label-style--pinned;
+}

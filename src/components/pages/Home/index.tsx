@@ -1,5 +1,5 @@
 import { BaseLayout } from '@components:global';
-import { About, Offer, Plans, Portfolio, Skills } from '@components:screens';
+import { Contact, Offer, Plans, Portfolio, Skills } from '@components:screens';
 
 export const Home = () => {
   return (
@@ -15,7 +15,7 @@ export const Home = () => {
       <Skills />
       <Portfolio />
       <Plans />
-      <About />
+      <Contact />
     </BaseLayout>
   );
 };

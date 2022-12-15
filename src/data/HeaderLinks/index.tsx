@@ -17,7 +17,7 @@ export const HeaderLinks: IHeaderLinks[] = [
     label: 'Plans',
   },
   {
-    hash: '#about',
-    label: 'About',
+    hash: '#contact',
+    label: 'Contact me',
   },
 ];

@@ -16,7 +16,7 @@ export const Plans = () => {
       <SectionTitle
         cli={{
           user: 'andrewench',
-          branch: 'main',
+          branch: 'dev',
           command: 'show-plans --username andrewench --grid',
           mode: CLIMode.DARK,
         }}

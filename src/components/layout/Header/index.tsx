@@ -30,7 +30,7 @@ export const Header = () => {
           [styles.sticky]: isSticky,
         })}
       >
-        <Logotype title="andrewench" description="> Person.init();" />
+        <Logotype title="andrewench" description="\> about.me();" />
 
         <Container flex className={styles.nav}>
           {HeaderLinks.map(({ hash, label }, idx) => (

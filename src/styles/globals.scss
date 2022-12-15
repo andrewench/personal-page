@@ -34,6 +34,24 @@
   }
 }
 
+@layer components {
+  .input-style {
+    @apply border-[2px] border-neutral-100 focus:outline-none focus:border-[2px] focus:border-cyan-500 placeholder:text-neutral-300 text-neutral-600;
+  }
+
+  .input-style--filled {
+    @apply border-cyan-500;
+  }
+
+  .label-style {
+    @apply absolute top-[10px] left-5 text-neutral-300 pointer-events-none text-sm transition-all duration-200;
+  }
+
+  .label-style--pinned {
+    @apply -top-[10px] bg-cyan-500 text-white px-2 rounded-[4px];
+  }
+}
+
 .blink-cursor {
   @apply relative after:content-[''] after:absolute after:-right-3 after:w-2 after:h-5 after:bg-slate-800 after:animate-blink;
 }
