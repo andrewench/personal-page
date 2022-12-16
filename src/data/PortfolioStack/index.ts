@@ -1,10 +1,6 @@
-interface IPortfolioStack {
-  label: string;
-  link: string;
-  src: string;
-}
+import type { IStack } from '@types';
 
-export const PortfolioStack: IPortfolioStack[] = [
+export const PortfolioStack: IStack[] = [
   {
     label: 'React',
     link: 'https://reactjs.org/',

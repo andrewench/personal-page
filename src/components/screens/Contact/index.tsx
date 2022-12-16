@@ -34,7 +34,7 @@ export const Contact = () => {
         <TextareaBox label="Message" />
 
         <PrimaryButton type={ButtonType.SUBMIT} className={styles.submit}>
-          Submit
+          Send
         </PrimaryButton>
       </form>
     </ScreenContainer>

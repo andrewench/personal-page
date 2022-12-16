@@ -1,3 +1,31 @@
 .box {
-  @apply h-96 bg-zinc-900 px-48 py-10;
+  @apply min-h-[300px] bg-zinc-900 px-48 py-10 gap-5;
+}
+
+.label {
+  @apply text-neutral-400;
+}
+
+.stack {
+  @apply gap-3 m-auto;
+}
+
+.copyright {
+  @apply text-slate-500 text-center text-sm py-2;
+}
+
+.profile {
+  @apply gap-3;
+}
+
+.profileLink {
+  @apply block m-auto;
+}
+
+.avatar {
+  @apply rounded-full;
+}
+
+.username {
+  @apply text-neutral-400;
 }

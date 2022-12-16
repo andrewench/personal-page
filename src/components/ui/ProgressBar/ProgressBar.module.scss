@@ -11,8 +11,7 @@
 }
 
 .drag {
-  @apply absolute left-0 top-0 w-28 h-full rounded-full bg-cyan-500 z-50 shadow-cyan-500;
-  box-shadow: 0 6px 30px #06b6d450, 0 0 4px #06b6d490;
+  @apply absolute left-0 top-0 w-28 h-full rounded-full bg-cyan-500 z-50 shadow-cyan-500 cyan-shadow;
 }
 
 .tooltip {

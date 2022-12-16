@@ -1,6 +1,8 @@
 import { FC, ReactNode } from 'react';
 import Head from 'next/head';
 import { Header, Footer } from '@components:layout';
+import { ScrollToTop } from '@components:ui';
+import type { IGithubApiResponse } from '@types';
 
 interface IBaseLayout {
   title: string;
@@ -9,16 +11,18 @@ interface IBaseLayout {
     description: string;
     author: string;
   };
+  user: IGithubApiResponse;
   children: ReactNode;
 }
 
 export const BaseLayout: FC<IBaseLayout> = ({
   title,
   meta: { keywords, description, author },
+  user,
   children,
 }) => {
   return (
-    <div>
+    <>
       <Head>
         <meta charSet="utf-8" />
         <title>{title}</title>
@@ -35,7 +39,9 @@ export const BaseLayout: FC<IBaseLayout> = ({
 
       {children}
 
-      <Footer />
-    </div>
+      <ScrollToTop />
+
+      <Footer user={user} />
+    </>
   );
 };

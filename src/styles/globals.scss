@@ -52,6 +52,12 @@
   }
 }
 
+@layer utilities {
+  .cyan-shadow {
+    box-shadow: 0 6px 30px #06b6d450, 0 0 4px #06b6d490;
+  }
+}
+
 .blink-cursor {
   @apply relative after:content-[''] after:absolute after:-right-3 after:w-2 after:h-5 after:bg-slate-800 after:animate-blink;
 }

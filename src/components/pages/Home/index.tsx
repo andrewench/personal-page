@@ -1,7 +1,8 @@
 import { BaseLayout } from '@components:global';
 import { Contact, Offer, Plans, Portfolio, Skills } from '@components:screens';
+import type { IGithubApiResponse } from '@types';
 
-export const Home = () => {
+export const Home = ({ user }: IGithubApiResponse) => {
   return (
     <BaseLayout
       title="andrewench | Personal Page"
@@ -10,6 +11,7 @@ export const Home = () => {
         description: 'Home page',
         author: 'andrewench',
       }}
+      user={user}
     >
       <Offer />
       <Skills />
