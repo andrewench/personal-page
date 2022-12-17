@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import classNames from 'classnames';
 import ScrollTo from 'react-scroll-into-view';
 import styles from './HeaderLink.module.scss';
@@ -9,11 +9,11 @@ interface IHeaderLink {
   children: string;
 }
 
-export const HeaderLink: FC<IHeaderLink> = ({
+export const HeaderLink: FC<IHeaderLink> = memo(function HeaderLink({
   anchor,
   className,
   children,
-}) => {
+}) {
   return (
     <ScrollTo selector={anchor} smooth scrollOptions={{ block: 'start' }}>
       <button
@@ -25,4 +25,4 @@ export const HeaderLink: FC<IHeaderLink> = ({
       </button>
     </ScrollTo>
   );
-};
+});

@@ -1,8 +1,8 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import classNames from 'classnames';
 import { IoAt, IoGitBranchOutline } from 'react-icons/io5';
 import { Container } from '@components:global';
-import { flexAlign } from '@types';
+import { FlexAlignOnMainAxis } from '@types';
 import styles from './SectionTitle.module.scss';
 
 export enum CLIMode {
@@ -20,24 +20,34 @@ interface ISectionTitle {
   };
 }
 
-export const SectionTitle: FC<ISectionTitle> = ({
+export const SectionTitle: FC<ISectionTitle> = memo(function SectionTitle({
   className,
   cli: { user, branch, command, mode },
-}) => {
+}) {
   return (
     <Container
       flex
-      align={flexAlign.CENTER}
+      align={FlexAlignOnMainAxis.CENTER}
       className={classNames(styles.box, className)}
     >
-      <Container flex align={flexAlign.CENTER} className={styles.user}>
+      <Container
+        flex
+        align={FlexAlignOnMainAxis.CENTER}
+        className={styles.user}
+      >
         <IoAt className={styles.icon} />
         {user}
       </Container>
-      <Container flex align={flexAlign.CENTER} className={styles.branch}>
+
+      <Container
+        flex
+        align={FlexAlignOnMainAxis.CENTER}
+        className={styles.branch}
+      >
         <IoGitBranchOutline className={styles.icon} />
         {branch}
       </Container>
+
       <p
         className={classNames(styles.command, 'blink-cursor', {
           [styles.textInverse]: mode === CLIMode.DARK,
@@ -48,4 +58,4 @@ export const SectionTitle: FC<ISectionTitle> = ({
       </p>
     </Container>
   );
-};
+});

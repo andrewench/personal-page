@@ -1,38 +1,46 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext, memo } from 'react';
 import { useRouter } from 'next/router';
 import classNames from 'classnames';
 import { Container } from '@components:global';
 import { Logotype } from '@components:layout';
 import { HeaderLink } from '@components:ui';
-import { flexAlign } from '@types';
+import { FlexAlignOnMainAxis } from '@types';
 import { HeaderLinks } from '@data';
+import { GlobalContext } from '@context';
 import styles from './Header.module.scss';
 
-export const Header = () => {
+export const Header = memo(function Header() {
   const [isSticky, setIsSticky] = useState<boolean>(false);
-  const [scroll, setScroll] = useState<number>(0);
   const router = useRouter();
+
+  const MemoComponent = memo(Container);
+
+  const {
+    state: {
+      scroll: { value, setScroll },
+    },
+  } = useContext(GlobalContext);
 
   useEffect(() => {
     document.onscroll = () => {
       setScroll(window.scrollY);
 
-      scroll >= 200 ? setIsSticky(true) : setIsSticky(false);
+      value >= 200 ? setIsSticky(true) : setIsSticky(false);
     };
-  }, [scroll]);
+  }, [value, setScroll]);
 
   return (
     <div id="top">
       <Container
         flex
-        align={flexAlign.CENTER}
+        align={FlexAlignOnMainAxis.CENTER}
         className={classNames(styles.box, {
           [styles.sticky]: isSticky,
         })}
       >
         <Logotype title="andrewench" description="\> about.me();" />
 
-        <Container flex className={styles.nav}>
+        <MemoComponent flex className={styles.nav}>
           {HeaderLinks.map(({ hash, label }, idx) => (
             <HeaderLink
               anchor={hash}
@@ -44,8 +52,8 @@ export const Header = () => {
               {label}
             </HeaderLink>
           ))}
-        </Container>
+        </MemoComponent>
       </Container>
     </div>
   );
-};
+});

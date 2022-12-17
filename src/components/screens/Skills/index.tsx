@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Container, ScreenContainer } from '@components:global';
 import {
   ProgressBar,
@@ -8,7 +9,7 @@ import {
 import { SkillsList } from '@data';
 import styles from './Skills.module.scss';
 
-export const Skills = () => {
+export const Skills = memo(function Skills() {
   return (
     <ScreenContainer anchor="skills" className={styles.box}>
       <SectionTitle
@@ -29,4 +30,4 @@ export const Skills = () => {
       </Container>
     </ScreenContainer>
   );
-};
+});

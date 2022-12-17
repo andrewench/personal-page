@@ -1,8 +1,9 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, useContext } from 'react';
 import Head from 'next/head';
 import { Header, Footer } from '@components:layout';
 import { ScrollToTop } from '@components:ui';
 import type { IGithubApiResponse } from '@types';
+import { GlobalContext } from '@context';
 
 interface IBaseLayout {
   title: string;
@@ -21,6 +22,10 @@ export const BaseLayout: FC<IBaseLayout> = ({
   user,
   children,
 }) => {
+  const {
+    state: { scroll },
+  } = useContext(GlobalContext);
+
   return (
     <>
       <Head>
@@ -39,7 +44,7 @@ export const BaseLayout: FC<IBaseLayout> = ({
 
       {children}
 
-      <ScrollToTop />
+      {scroll.value >= 300 && <ScrollToTop />}
 
       <Footer user={user} />
     </>

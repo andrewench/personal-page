@@ -23,7 +23,8 @@
       "@components:pages": ["./components/pages"],
       "@types": ["./types"],
       "@data": ["./data"],
-      "@utils": ["./utils"]
+      "@utils": ["./utils"],
+      "@context": ["./context"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

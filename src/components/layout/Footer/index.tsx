@@ -1,12 +1,13 @@
+import { memo } from 'react';
 import Image from 'next/image';
 import { Container, SvgIcon, BlankLink } from '@components:global';
 import { Logotype } from '@components:layout';
 import { BuildStack } from '@data';
-import { flexAlign } from '@types';
+import { FlexAlignOnMainAxis } from '@types';
 import type { IGithubApiResponse } from '@types';
 import styles from './Footer.module.scss';
 
-export const Footer = ({ user }: IGithubApiResponse) => {
+export const Footer = memo(function Footer({ user }: IGithubApiResponse) {
   return (
     <Container flex column className={styles.box}>
       <Container flex>
@@ -17,7 +18,11 @@ export const Footer = ({ user }: IGithubApiResponse) => {
         href="https://github.com/andrewench"
         className={styles.profileLink}
       >
-        <Container flex align={flexAlign.CENTER} className={styles.profile}>
+        <Container
+          flex
+          align={FlexAlignOnMainAxis.CENTER}
+          className={styles.profile}
+        >
           <p className={styles.label}>Github Page:</p>
           <Image
             className={styles.avatar}
@@ -31,7 +36,11 @@ export const Footer = ({ user }: IGithubApiResponse) => {
         </Container>
       </BlankLink>
 
-      <Container flex align={flexAlign.CENTER} className={styles.stack}>
+      <Container
+        flex
+        align={FlexAlignOnMainAxis.CENTER}
+        className={styles.stack}
+      >
         <p className={styles.label}>Build Stack:</p>
 
         {BuildStack.map(({ label, link, src }, idx) => (
@@ -48,4 +57,4 @@ export const Footer = ({ user }: IGithubApiResponse) => {
       <p className={styles.copyright}>© 2022-2023. All right reserved.</p>
     </Container>
   );
-};
+});

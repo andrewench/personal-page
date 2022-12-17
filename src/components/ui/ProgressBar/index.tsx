@@ -1,4 +1,4 @@
-import { FC, useCallback, useRef, useState } from 'react';
+import { FC, useCallback, useRef, useState, memo } from 'react';
 import { calculateProgress } from '@utils';
 import classNames from 'classnames';
 import styles from './ProgressBar.module.scss';
@@ -13,7 +13,7 @@ interface IProgressBar {
   mode?: ProgressBarMode;
 }
 
-export const ProgressBar: FC<IProgressBar> = ({ percent, mode }) => {
+export const ProgressBar: FC<IProgressBar> = memo(function ProgressBar({ percent, mode }) {
   const track = useRef<HTMLDivElement>(null);
   const [dragPosition, setDragPosition] = useState<number>(0);
 
@@ -58,4 +58,4 @@ export const ProgressBar: FC<IProgressBar> = ({ percent, mode }) => {
       </div>
     </div>
   );
-};
+});

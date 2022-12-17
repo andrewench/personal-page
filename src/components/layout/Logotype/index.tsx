@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import ScrollTo from 'react-scroll-into-view';
 import classNames from 'classnames';
 import styles from './Logotype.module.scss';
@@ -8,7 +8,10 @@ interface ILogotype {
   description: string;
 }
 
-export const Logotype: FC<ILogotype> = ({ title, description }) => {
+export const Logotype: FC<ILogotype> = memo(function Logotype({
+  title,
+  description,
+}) {
   return (
     <ScrollTo selector="#top" smooth scrollOptions={{ block: 'start' }}>
       <button type="button" className={styles.link}>
@@ -25,4 +28,4 @@ export const Logotype: FC<ILogotype> = ({ title, description }) => {
       </button>
     </ScrollTo>
   );
-};
+});

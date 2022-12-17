@@ -1,4 +1,4 @@
-import { FormEvent } from 'react';
+import { FormEvent, memo } from 'react';
 import { ScreenContainer } from '@components:global';
 import {
   SectionTitle,
@@ -10,7 +10,7 @@ import {
 import { ButtonType, InputType } from '@types';
 import styles from './Contact.module.scss';
 
-export const Contact = () => {
+export const Contact = memo(function Contact() {
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
   };
@@ -39,4 +39,4 @@ export const Contact = () => {
       </form>
     </ScreenContainer>
   );
-};
+});

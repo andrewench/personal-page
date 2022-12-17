@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import Image from 'next/image';
 import {
   ScreenContainer,
@@ -14,7 +15,7 @@ import {
 import { PortfolioStack } from '@data';
 import styles from './Portfolio.module.scss';
 
-export const Portfolio = () => {
+export const Portfolio = memo(function Portfolio() {
   return (
     <ScreenContainer anchor="portfolio" className={styles.box}>
       <SectionTitle
@@ -67,4 +68,4 @@ export const Portfolio = () => {
       </Container>
     </ScreenContainer>
   );
-};
+});

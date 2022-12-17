@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Container, ScreenContainer } from '@components:global';
 import {
   SectionTitle,
@@ -10,7 +11,7 @@ import classNames from 'classnames';
 import { PlansList } from '@data';
 import styles from './Plans.module.scss';
 
-export const Plans = () => {
+export const Plans = memo(function Plans() {
   return (
     <ScreenContainer anchor="plans" className={classNames(styles.box)}>
       <SectionTitle
@@ -31,4 +32,4 @@ export const Plans = () => {
       </Container>
     </ScreenContainer>
   );
-};
+});

@@ -1,6 +1,6 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, memo } from 'react';
 import classNames from 'classnames';
-import { flexAlign, flexContent } from '@types';
+import { FlexAlignOnMainAxis, FlexAlignOnCrossAxis } from '@types';
 import styles from './Container.module.scss';
 
 interface IContainer {
@@ -8,14 +8,14 @@ interface IContainer {
   className?: string;
   flex: boolean;
   grid?: boolean;
-  align?: flexAlign;
-  content?: flexContent;
+  align?: FlexAlignOnMainAxis;
+  content?: FlexAlignOnCrossAxis;
   column?: boolean;
   center?: boolean;
   children: ReactNode;
 }
 
-export const Container: FC<IContainer> = ({
+export const Container: FC<IContainer> = memo(function Container({
   id = '',
   className = '',
   flex,
@@ -25,7 +25,7 @@ export const Container: FC<IContainer> = ({
   content,
   center,
   children,
-}) => {
+}) {
   return (
     <div
       id={id}
@@ -35,16 +35,16 @@ export const Container: FC<IContainer> = ({
           [styles.flexCol]: column,
           [styles.flexFullCenter]: center,
           [styles.grid]: grid,
-          [styles.alignStart]: align === flexAlign.START,
-          [styles.alignCenter]: align === flexAlign.CENTER,
-          [styles.alignBaseline]: align === flexAlign.BASELINE,
-          [styles.alignStretch]: align === flexAlign.STRETCH,
-          [styles.contentStart]: content === flexContent.START,
-          [styles.contentCenter]: content === flexContent.CENTER,
-          [styles.contentEnd]: content === flexContent.END,
-          [styles.contentBetween]: content === flexContent.BETWEEN,
-          [styles.contentAround]: content === flexContent.AROUND,
-          [styles.contentEvenly]: content === flexContent.EVENLY,
+          [styles.alignStart]: align === FlexAlignOnMainAxis.START,
+          [styles.alignCenter]: align === FlexAlignOnMainAxis.CENTER,
+          [styles.alignBaseline]: align === FlexAlignOnMainAxis.BASELINE,
+          [styles.alignStretch]: align === FlexAlignOnMainAxis.STRETCH,
+          [styles.contentStart]: content === FlexAlignOnCrossAxis.START,
+          [styles.contentCenter]: content === FlexAlignOnCrossAxis.CENTER,
+          [styles.contentEnd]: content === FlexAlignOnCrossAxis.END,
+          [styles.contentBetween]: content === FlexAlignOnCrossAxis.BETWEEN,
+          [styles.contentAround]: content === FlexAlignOnCrossAxis.AROUND,
+          [styles.contentEvenly]: content === FlexAlignOnCrossAxis.EVENLY,
         },
         className
       )}
@@ -52,4 +52,4 @@ export const Container: FC<IContainer> = ({
       {children}
     </div>
   );
-};
+});
