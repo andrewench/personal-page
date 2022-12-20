@@ -3,7 +3,21 @@
 }
 
 .box {
-  @apply h-8;
+  @apply h-8 max-md:flex-col max-md:items-start max-md:gap-2 max-md:mb-6;
+}
+
+.PS1 {
+  $offsetBox: 20px;
+
+  @apply relative max-md:before:content-[''] max-md:before:absolute max-md:before:-left-[#{$offsetBox}] max-md:before:top-4 max-md:before:z-10 max-md:before:w-[100px] max-md:before:h-[42px] max-md:before:border-[1px] max-md:before:border-white max-md:before:rounded-md max-md:after:content-[''] max-md:after:absolute max-md:after:-left-[#{$offsetBox - 18px}] max-md:after:-bottom-[32px] max-md:after:border-[7px] max-md:after:border-transparent max-md:after:border-l-white max-md:after:z-20;
+}
+
+.PS1::before {
+  clip-path: polygon(0 0, 100% 0%, 22% 100%, 0% 100%);
+}
+
+.PS1Inverse {
+  @apply max-md:before:border-slate-700 max-md:after:border-l-slate-700;
 }
 
 .icon {
@@ -12,16 +26,16 @@
 
 .user {
   @include drawTriangle();
-  @apply relative bg-white rounded-l-full gap-1 px-4 text-neutral-600 z-[200] after:border-l-white h-full font-medium;
+  @apply relative bg-white rounded-l-full gap-1 px-4 text-neutral-600 z-[200] after:border-l-white h-8 font-medium;
 }
 
 .branch {
   @include drawTriangle();
-  @apply relative bg-cyan-500 pl-8 pr-5 gap-1 z-[100] after:border-l-cyan-500 h-full text-white font-medium;
+  @apply relative bg-cyan-500 pl-8 pr-5 gap-1 z-[100] after:border-l-cyan-500 h-8 text-white font-medium;
 }
 
 .command {
-  @apply text-slate-100 h-full pl-8 pt-[2px] pr-2 font-medium text-lg after:mt-1 z-[100];
+  @apply text-slate-100 h-8 md:pl-8  pr-2 font-medium lg:text-lg z-[100] max-md:text-sm max-md:pt-[7px] max-md:after:mt-0 md:text-base md:pt-1 md:after:mt-[2px] max-md:pl-4 lg:after:mt-1 lg:pt-[2px];
 }
 
 .command.textInverse {

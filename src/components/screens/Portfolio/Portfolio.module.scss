@@ -3,7 +3,7 @@
 }
 
 .showcase {
-  @apply items-start justify-between;
+  @apply items-start justify-between max-xl:flex-col max-xl:gap-4 max-xl:items-center;
 }
 
 .title {

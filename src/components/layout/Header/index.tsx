@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import classNames from 'classnames';
 import { Container } from '@components:global';
 import { Logotype } from '@components:layout';
-import { HeaderLink } from '@components:ui';
+import { HeaderLink, HamburgerMenu } from '@components:ui';
 import { FlexAlignOnMainAxis } from '@types';
 import { HeaderLinks } from '@data';
 import { GlobalContext } from '@context';
@@ -53,6 +53,8 @@ export const Header = memo(function Header() {
             </HeaderLink>
           ))}
         </MemoComponent>
+
+        <HamburgerMenu />
       </Container>
     </div>
   );

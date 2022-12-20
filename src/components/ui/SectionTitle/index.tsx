@@ -25,27 +25,30 @@ export const SectionTitle: FC<ISectionTitle> = memo(function SectionTitle({
   cli: { user, branch, command, mode },
 }) {
   return (
-    <Container
-      flex
-      align={FlexAlignOnMainAxis.CENTER}
-      className={classNames(styles.box, className)}
-    >
+    <Container flex className={classNames(styles.box, className)}>
       <Container
         flex
-        align={FlexAlignOnMainAxis.CENTER}
-        className={styles.user}
+        className={classNames(styles.PS1, {
+          [styles.PS1Inverse]: mode === CLIMode.DARK,
+        })}
       >
-        <IoAt className={styles.icon} />
-        {user}
-      </Container>
+        <Container
+          flex
+          align={FlexAlignOnMainAxis.CENTER}
+          className={styles.user}
+        >
+          <IoAt className={styles.icon} />
+          {user}
+        </Container>
 
-      <Container
-        flex
-        align={FlexAlignOnMainAxis.CENTER}
-        className={styles.branch}
-      >
-        <IoGitBranchOutline className={styles.icon} />
-        {branch}
+        <Container
+          flex
+          align={FlexAlignOnMainAxis.CENTER}
+          className={styles.branch}
+        >
+          <IoGitBranchOutline className={styles.icon} />
+          {branch}
+        </Container>
       </Container>
 
       <p

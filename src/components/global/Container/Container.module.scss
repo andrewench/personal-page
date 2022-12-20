@@ -14,7 +14,7 @@
 }
 
 .grid {
-  @apply flex-wrap gap-8 py-10;
+  @apply flex-wrap max-md:gap-3 lg:gap-8 py-10;
 }
 
 $alignRow: 'start', 'center', 'end', 'between', 'around', 'evenly';

@@ -1,5 +1,5 @@
 .box {
-  @apply h-20 px-48 w-full fixed top-0 z-[9000] justify-between items-center transition-colors duration-300;
+  @apply box-container h-20 w-full fixed top-0 z-[9000] justify-between items-center transition-colors duration-300;
 }
 
 .box.sticky {
@@ -12,4 +12,8 @@
 
 .activeLink {
   @apply before:w-full text-white;
+}
+
+.nav {
+  @apply max-lg:hidden-ui;
 }

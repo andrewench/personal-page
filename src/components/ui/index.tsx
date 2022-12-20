@@ -8,3 +8,4 @@ export { InputBox } from './InputBox';
 export { PrimaryButton } from './PrimaryButton';
 export { TextareaBox } from './TextareaBox';
 export { ScrollToTop } from './ScrollToTop';
+export { HamburgerMenu } from './HamburgerMenu';
