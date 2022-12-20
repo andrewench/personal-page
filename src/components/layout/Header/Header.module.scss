@@ -1,5 +1,5 @@
 .box {
-  @apply box-container h-20 w-full fixed top-0 z-[9000] justify-between items-center transition-colors duration-300;
+  @apply max-md:px-10 lg:px-36 xl:px-48 2xl:px-[20%] h-20 w-full fixed top-0 z-[9000] justify-between items-center transition-colors duration-300;
 }
 
 .box.sticky {
@@ -15,5 +15,5 @@
 }
 
 .nav {
-  @apply max-lg:hidden-ui;
+  @apply max-lg:hidden max-lg:invisible max-lg:pointer-events-none;
 }

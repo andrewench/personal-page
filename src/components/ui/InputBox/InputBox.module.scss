@@ -3,22 +3,18 @@
 }
 
 .input {
-  @apply w-full px-4 pt-[6px] pb-2 mb-4 block rounded-md input-style;
+  @apply w-full px-4 pt-[6px] pb-2 mb-4 block rounded-md border-[2px] border-neutral-100 focus:outline-none focus:border-[2px] focus:border-cyan-500 placeholder:text-neutral-300 text-neutral-600;
 }
 
 .filled {
-  @apply input-style--filled;
+  @apply border-cyan-500;
 }
 
 .label {
-  @apply label-style;
-}
-
-.pinned {
-  @apply label-style--pinned;
+  @apply absolute top-[10px] left-5 text-neutral-300 pointer-events-none text-sm transition-all duration-200;
 }
 
 .input:focus ~ .label,
-.label.pinned {
-  @apply label-style--pinned;
+.pinned {
+  @apply -top-[10px] bg-cyan-500 text-white px-2 rounded-[4px];
 }

@@ -7,7 +7,7 @@ import { FlexAlignOnMainAxis } from '@types';
 import type { IGithubApiResponse } from '@types';
 import styles from './Footer.module.scss';
 
-export const Footer = memo(function Footer({ user }: IGithubApiResponse) {
+export const Footer = memo(function Footer({ user }: {user: IGithubApiResponse}) {
   return (
     <Container flex column className={styles.box}>
       <Container flex>

@@ -1,5 +1,5 @@
 .box {
-  @apply box-container min-h-[300px] bg-zinc-900 py-10 gap-5;
+  @apply max-md:px-10 lg:px-36 xl:px-48 2xl:px-[20%] min-h-[300px] bg-zinc-900 py-10 gap-5;
 }
 
 .label {

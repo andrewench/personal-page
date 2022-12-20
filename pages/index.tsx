@@ -2,7 +2,7 @@ import { NextPage } from 'next';
 import { Home } from '@components:pages';
 import type { IGithubApiResponse } from '@types';
 
-const HomePage: NextPage<IGithubApiResponse> = ({ user }) => {
+const HomePage: NextPage<{ user: IGithubApiResponse }> = ({ user }) => {
   return <Home user={user} />;
 };
 

@@ -1,3 +1,4 @@
 .btn {
-  @apply fixed right-10 bottom-10 w-10 h-10 rounded-md pl-[10px] text-xl bg-cyan-500 text-white z-[1000] cyan-shadow;
+  @apply fixed right-10 bottom-10 w-10 h-10 rounded-md pl-[10px] text-xl bg-cyan-500 text-white z-[1000];
+  box-shadow: 0 6px 30px #06b6d450, 0 0 4px #06b6d490;
 }
