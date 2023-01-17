@@ -2,7 +2,7 @@ import cn from 'classnames';
 
 import { useRouter } from 'next/router';
 
-import { memo, useContext, useEffect, useState } from 'react';
+import { FC, memo, useContext, useEffect, useState } from 'react';
 
 import { Logotype } from '@/components/layout';
 
@@ -18,7 +18,14 @@ import { GlobalContext } from '@/context';
 
 import styles from './Header.module.scss';
 
-export const Header = memo(function Header() {
+enum HeaderBehaviorVariant {
+  STICKY = 'sticky',
+  FIXED = 'fixed',
+}
+
+export const Header: FC<{
+  variant: Lowercase<keyof typeof HeaderBehaviorVariant>;
+}> = memo(function Header({ variant }) {
   const [isSticky, setIsSticky] = useState<boolean>(false);
   const router = useRouter();
 
@@ -43,7 +50,9 @@ export const Header = memo(function Header() {
       <FlexContainer
         align={FlexAlignOnMainAxis.CENTER}
         className={cn(styles.box, {
-          [styles.sticky]: isSticky,
+          [styles.stickyBackground]: isSticky,
+          [styles.stickyBehavior]: variant === HeaderBehaviorVariant.STICKY,
+          [styles.fixedBehavior]: variant === HeaderBehaviorVariant.FIXED,
         })}
       >
         <Logotype title="andrewench" description="\> about.me();" />

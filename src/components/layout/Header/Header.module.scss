@@ -1,19 +1,27 @@
 .box {
-  @apply max-md:px-10 lg:px-36 xl:px-48 2xl:px-[20%] h-20 w-full fixed top-0 z-[9000] justify-between items-center transition-colors duration-300;
+  @apply top-0 z-[9000] h-20 w-full items-center justify-between transition-colors duration-300 max-md:px-10 lg:px-36 xl:px-48 2xl:px-[20%];
 }
 
-.box.sticky {
+.fixedBehavior {
+  @apply fixed;
+}
+
+.stickyBehavior {
+  @apply sticky;
+}
+
+.box.stickyBackground {
   @apply bg-[#090c10] bg-opacity-95 backdrop-blur-md;
 }
 
 .link {
-  @apply h-20 pt-[2px] relative px-6 hover:before:w-full before:w-0 before:transition-all before:duration-300 before:content-[''] before:h-[2px] before:bg-cyan-400 before:block before:absolute before:z-[10] before:bottom-0 before:left-0 hover:text-white;
+  @apply relative h-20 px-6 pt-[2px] before:absolute before:bottom-0 before:left-0 before:z-[10] before:block before:h-[2px] before:w-0 before:bg-cyan-400 before:transition-all before:duration-300 before:content-[''] hover:text-white hover:before:w-full;
 }
 
 .activeLink {
-  @apply before:w-full text-white;
+  @apply text-white before:w-full;
 }
 
 .nav {
-  @apply max-lg:hidden max-lg:invisible max-lg:pointer-events-none;
+  @apply max-lg:pointer-events-none max-lg:invisible max-lg:hidden;
 }

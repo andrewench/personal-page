@@ -1,13 +1,13 @@
 import { NextPage } from 'next';
 
-import { Home } from '@/components/pages';
+import { Blog } from '@/components/pages';
 
-import type { IGithubApiResponse } from '@/types';
+import { IGithubApiResponse } from '@/types';
 
 import { fetchGithubUserByLogin } from '@/utils';
 
-const HomePage: NextPage<{ user: IGithubApiResponse }> = ({ user }) => {
-  return <Home user={user} />;
+const BlogPage: NextPage<{ user: IGithubApiResponse }> = ({ user }) => {
+  return <Blog user={user} />;
 };
 
 export const getStaticProps = async () => {
@@ -22,4 +22,4 @@ export const getStaticProps = async () => {
   };
 };
 
-export default HomePage;
+export default BlogPage;

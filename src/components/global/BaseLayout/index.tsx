@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 import { FC, ReactNode, useContext } from 'react';
 
@@ -27,6 +28,8 @@ export const BaseLayout: FC<IBaseLayout> = ({
   user,
   children,
 }) => {
+  const router = useRouter();
+
   const {
     state: { scroll },
   } = useContext(GlobalContext);
@@ -45,7 +48,11 @@ export const BaseLayout: FC<IBaseLayout> = ({
         />
       </Head>
 
-      <Header />
+      {router.pathname === '/' ? (
+        <Header variant="fixed" />
+      ) : (
+        <Header variant="sticky" />
+      )}
 
       {children}
 
