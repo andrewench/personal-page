@@ -1,10 +1,13 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/76504cf9-b7cb-4669-80e0-e076b7f8476d/deploy-status)](https://app.netlify.com/sites/andrewench/deploys)
-
 ## Description
 
-Personal Landing Page with Skills and Portfolio
+The branch describes the features of the blog.
 
 ![andrewench's personal page preview](./pictures/preview.png)
+
+## Branches
+
+[main](https://github.com/andrewench/personal-page/tree/main) — describe the features of the landing page\
+[feature/main](https://github.com/andrewench/personal-page/tree/feature/main) — describe the features of the blog
 
 ## Install
 
@@ -19,6 +22,6 @@ yarn install
 yarn run dev
 ```
 
-## Website
+## Website (Landing Page Version)
 
 [Personal Page](https://andrewench.netlify.app/)
