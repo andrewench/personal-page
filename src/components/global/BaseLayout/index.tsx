@@ -1,9 +1,14 @@
-import { FC, ReactNode, useContext } from 'react';
 import Head from 'next/head';
-import { Header, Footer } from '@components:layout';
-import { ScrollToTop } from '@components:ui';
-import type { IGithubApiResponse } from '@types';
-import { GlobalContext } from '@context';
+
+import { FC, ReactNode, useContext } from 'react';
+
+import { Footer, Header } from '@/components/layout';
+
+import { ScrollToTop } from '@/components/ui';
+
+import type { IGithubApiResponse } from '@/types';
+
+import { GlobalContext } from '@/context';
 
 interface IBaseLayout {
   title: string;

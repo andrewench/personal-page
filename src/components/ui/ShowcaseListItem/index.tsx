@@ -1,5 +1,7 @@
+import cn from 'classnames';
+
 import { FC, ReactNode } from 'react';
-import classNames from 'classnames';
+
 import styles from './ShowcaseListItem.module.scss';
 
 interface IShowcaseListItem {
@@ -15,7 +17,7 @@ export const ShowcaseListItem: FC<IShowcaseListItem> = ({
 }) => {
   return (
     <li className={styles.item}>
-      <div className={classNames(styles.value, className)}>
+      <div className={cn(styles.value, className)}>
         <span className={styles.label}>{label}:</span>
         {children}
       </div>

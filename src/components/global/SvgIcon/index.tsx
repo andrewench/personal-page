@@ -1,5 +1,6 @@
+import cn from 'classnames';
+
 import Image from 'next/image';
-import classNames from 'classnames';
 
 interface Icon {
   src: string;
@@ -10,7 +11,7 @@ interface Icon {
 export const SvgIcon = ({ src, label, className }: Icon) => {
   return (
     <Image
-      className={classNames(className)}
+      className={cn(className)}
       src={src}
       alt={label}
       width={32}

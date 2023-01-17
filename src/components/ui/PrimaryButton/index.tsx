@@ -1,6 +1,9 @@
+import cn from 'classnames';
+
 import { FC, ReactNode } from 'react';
-import { ButtonType } from '@types';
-import classNames from 'classnames';
+
+import { ButtonType } from '@/types';
+
 import styles from './PrimaryButton.module.scss';
 
 interface IPrimaryButton {
@@ -15,7 +18,7 @@ export const PrimaryButton: FC<IPrimaryButton> = ({
   children,
 }) => {
   return (
-    <button type={type} className={classNames(styles.btn, className)}>
+    <button type={type} className={cn(styles.btn, className)}>
       {children}
     </button>
   );

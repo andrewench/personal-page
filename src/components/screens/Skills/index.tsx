@@ -1,12 +1,16 @@
 import { memo } from 'react';
-import { Container, ScreenContainer } from '@components:global';
+
+import { FlexContainer, ScreenContainer } from '@/components/global';
+
 import {
+  CLIMode,
   ProgressBar,
   ProgressBarBox,
   SectionTitle,
-  CLIMode,
-} from '@components:ui';
-import { SkillsList } from '@data';
+} from '@/components/ui';
+
+import { SkillsList } from '@/data';
+
 import styles from './Skills.module.scss';
 
 export const Skills = memo(function Skills() {
@@ -21,13 +25,13 @@ export const Skills = memo(function Skills() {
         }}
       />
 
-      <Container flex grid center>
+      <FlexContainer grid center>
         {SkillsList.map(({ label, percent }, idx) => (
           <ProgressBarBox label={label} key={idx}>
             <ProgressBar percent={percent} />
           </ProgressBarBox>
         ))}
-      </Container>
+      </FlexContainer>
     </ScreenContainer>
   );
 });

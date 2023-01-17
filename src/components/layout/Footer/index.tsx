@@ -1,25 +1,34 @@
-import { memo } from 'react';
 import Image from 'next/image';
-import { Container, SvgIcon, BlankLink } from '@components:global';
-import { Logotype } from '@components:layout';
-import { BuildStack } from '@data';
-import { FlexAlignOnMainAxis } from '@types';
-import type { IGithubApiResponse } from '@types';
+
+import { memo } from 'react';
+
+import { Logotype } from '@/components/layout';
+
+import { BlankLink, FlexContainer, SvgIcon } from '@/components/global';
+
+import { FlexAlignOnMainAxis } from '@/types';
+import type { IGithubApiResponse } from '@/types';
+
+import { BuildStack } from '@/data';
+
 import styles from './Footer.module.scss';
 
-export const Footer = memo(function Footer({ user }: {user: IGithubApiResponse}) {
+export const Footer = memo(function Footer({
+  user,
+}: {
+  user: IGithubApiResponse;
+}) {
   return (
-    <Container flex column className={styles.box}>
-      <Container flex>
+    <FlexContainer column className={styles.box}>
+      <FlexContainer>
         <Logotype title="andrewench" description="\> about.me();" />
-      </Container>
+      </FlexContainer>
 
       <BlankLink
         href="https://github.com/andrewench"
         className={styles.profileLink}
       >
-        <Container
-          flex
+        <FlexContainer
           align={FlexAlignOnMainAxis.CENTER}
           className={styles.profile}
         >
@@ -33,11 +42,10 @@ export const Footer = memo(function Footer({ user }: {user: IGithubApiResponse})
             draggable={false}
           />
           <p className={styles.username}>{user.login}</p>
-        </Container>
+        </FlexContainer>
       </BlankLink>
 
-      <Container
-        flex
+      <FlexContainer
         align={FlexAlignOnMainAxis.CENTER}
         className={styles.stack}
       >
@@ -52,9 +60,9 @@ export const Footer = memo(function Footer({ user }: {user: IGithubApiResponse})
             <SvgIcon src={src} label={label} />
           </BlankLink>
         ))}
-      </Container>
+      </FlexContainer>
 
       <p className={styles.copyright}>© 2022-2023. All right reserved.</p>
-    </Container>
+    </FlexContainer>
   );
 });

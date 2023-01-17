@@ -1,18 +1,23 @@
-import { memo } from 'react';
 import Image from 'next/image';
+
+import { memo } from 'react';
+
 import {
-  ScreenContainer,
-  Container,
-  SvgIcon,
   BlankLink,
-} from '@components:global';
+  FlexContainer,
+  ScreenContainer,
+  SvgIcon,
+} from '@/components/global';
+
 import {
-  SectionTitle,
   CLIMode,
+  SectionTitle,
   ShowcaseList,
   ShowcaseListItem,
-} from '@components:ui';
-import { PortfolioStack } from '@data';
+} from '@/components/ui';
+
+import { PortfolioStack } from '@/data';
+
 import styles from './Portfolio.module.scss';
 
 export const Portfolio = memo(function Portfolio() {
@@ -28,7 +33,7 @@ export const Portfolio = memo(function Portfolio() {
         }}
       />
 
-      <Container flex className={styles.showcase}>
+      <FlexContainer className={styles.showcase}>
         <BlankLink
           className={styles.link}
           href="/images/pet-project.png"
@@ -49,7 +54,7 @@ export const Portfolio = memo(function Portfolio() {
           <ShowcaseListItem label="Title">Music Platform</ShowcaseListItem>
 
           <ShowcaseListItem label="Stack" className={styles.item}>
-            <Container flex className={styles.stack}>
+            <FlexContainer className={styles.stack}>
               {PortfolioStack.map(({ label, link, src }, idx) => (
                 <BlankLink
                   className={styles.link}
@@ -60,12 +65,12 @@ export const Portfolio = memo(function Portfolio() {
                   <SvgIcon src={src} label={label} />
                 </BlankLink>
               ))}
-            </Container>
+            </FlexContainer>
           </ShowcaseListItem>
 
           <ShowcaseListItem label="Status">In develop</ShowcaseListItem>
         </ShowcaseList>
-      </Container>
+      </FlexContainer>
     </ScreenContainer>
   );
 });

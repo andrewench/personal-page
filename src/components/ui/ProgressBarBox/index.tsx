@@ -1,6 +1,9 @@
+import cn from 'classnames';
+
 import { FC, ReactNode, memo } from 'react';
-import { ProgressBarMode } from '@components:ui';
-import classNames from 'classnames';
+
+import { ProgressBarMode } from '@/components/ui';
+
 import styles from './ProgressBarBox.module.scss';
 
 interface IProgressBarBox {
@@ -14,7 +17,7 @@ export const ProgressBarBox: FC<IProgressBarBox> = memo(
     return (
       <div className={styles.box}>
         <p
-          className={classNames(styles.label, {
+          className={cn(styles.label, {
             [styles.labelInverse]: mode === ProgressBarMode.LIGHT,
           })}
         >

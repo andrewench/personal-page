@@ -1,4 +1,4 @@
-import type { IStack } from '@types';
+import type { IStack } from '@/types';
 
 export const PortfolioStack: IStack[] = [
   {

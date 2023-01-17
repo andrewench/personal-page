@@ -1,13 +1,17 @@
 import { FormEvent, memo } from 'react';
-import { ScreenContainer } from '@components:global';
+
+import { ScreenContainer } from '@/components/global';
+
 import {
-  SectionTitle,
   CLIMode,
   InputBox,
   PrimaryButton,
+  SectionTitle,
   TextareaBox,
-} from '@components:ui';
-import { ButtonType, InputType } from '@types';
+} from '@/components/ui';
+
+import { ButtonType, InputType } from '@/types';
+
 import styles from './Contact.module.scss';
 
 export const Contact = memo(function Contact() {

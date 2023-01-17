@@ -5,5 +5,25 @@
   "singleQuote": true,
   "trailingComma": "es5",
   "jsxBracketSameLine": false,
-  "semi": true
+  "semi": true,
+  "importOrder": [
+    "(next.*)",
+    "(.*react.*)",
+    "<THIRD_PARTY_MODULES",
+    "^@/components/layout$",
+    "^@/components/global$",
+    "^@/components/pages$",
+    "^@/components/screens$",
+    "^@/components/ui$",
+    "^@/types$",
+    "^@/data$",
+    "^@/utils$",
+    "^@/context$",
+    "^(.*.package.json)$",
+    "^(./App)$",
+    "^(./styles/*)",
+    "^(.*.module.scss)$"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }

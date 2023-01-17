@@ -1,19 +1,28 @@
-import { useState, useEffect, useContext, memo } from 'react';
+import cn from 'classnames';
+
 import { useRouter } from 'next/router';
-import classNames from 'classnames';
-import { Container } from '@components:global';
-import { Logotype } from '@components:layout';
-import { HeaderLink, HamburgerMenu } from '@components:ui';
-import { FlexAlignOnMainAxis } from '@types';
-import { HeaderLinks } from '@data';
-import { GlobalContext } from '@context';
+
+import { memo, useContext, useEffect, useState } from 'react';
+
+import { Logotype } from '@/components/layout';
+
+import { FlexContainer } from '@/components/global';
+
+import { HamburgerMenu, HeaderLink } from '@/components/ui';
+
+import { FlexAlignOnMainAxis } from '@/types';
+
+import { HeaderLinks } from '@/data';
+
+import { GlobalContext } from '@/context';
+
 import styles from './Header.module.scss';
 
 export const Header = memo(function Header() {
   const [isSticky, setIsSticky] = useState<boolean>(false);
   const router = useRouter();
 
-  const MemoComponent = memo(Container);
+  const MemoComponent = memo(FlexContainer);
 
   const {
     state: {
@@ -31,20 +40,19 @@ export const Header = memo(function Header() {
 
   return (
     <div id="top">
-      <Container
-        flex
+      <FlexContainer
         align={FlexAlignOnMainAxis.CENTER}
-        className={classNames(styles.box, {
+        className={cn(styles.box, {
           [styles.sticky]: isSticky,
         })}
       >
         <Logotype title="andrewench" description="\> about.me();" />
 
-        <MemoComponent flex className={styles.nav}>
+        <MemoComponent className={styles.nav}>
           {HeaderLinks.map(({ hash, label }, idx) => (
             <HeaderLink
               anchor={hash}
-              className={classNames(styles.link, {
+              className={cn(styles.link, {
                 [styles.activeLink]: router.asPath.substring(1) === hash,
               })}
               key={idx}
@@ -55,7 +63,7 @@ export const Header = memo(function Header() {
         </MemoComponent>
 
         <HamburgerMenu />
-      </Container>
+      </FlexContainer>
     </div>
   );
 });

@@ -1,6 +1,8 @@
-import { BaseLayout } from '@components:global';
-import { Contact, Offer, Plans, Portfolio, Skills } from '@components:screens';
-import type { IGithubApiResponse } from '@types';
+import { BaseLayout } from '@/components/global';
+
+import { Contact, Offer, Plans, Portfolio, Skills } from '@/components/screens';
+
+import type { IGithubApiResponse } from '@/types';
 
 export const Home = ({ user }: { user: IGithubApiResponse }) => {
   return (

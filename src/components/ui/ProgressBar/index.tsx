@@ -1,6 +1,9 @@
-import { FC, useCallback, useRef, useState, memo } from 'react';
-import { calculateProgress } from '@utils';
-import classNames from 'classnames';
+import cn from 'classnames';
+
+import { FC, memo, useCallback, useRef, useState } from 'react';
+
+import { calculateProgress } from '@/utils';
+
 import styles from './ProgressBar.module.scss';
 
 export enum ProgressBarMode {
@@ -13,7 +16,10 @@ interface IProgressBar {
   mode?: ProgressBarMode;
 }
 
-export const ProgressBar: FC<IProgressBar> = memo(function ProgressBar({ percent, mode }) {
+export const ProgressBar: FC<IProgressBar> = memo(function ProgressBar({
+  percent,
+  mode,
+}) {
   const track = useRef<HTMLDivElement>(null);
   const [dragPosition, setDragPosition] = useState<number>(0);
 
@@ -46,7 +52,7 @@ export const ProgressBar: FC<IProgressBar> = memo(function ProgressBar({ percent
   return (
     <div className={styles.box}>
       <div
-        className={classNames(styles.track, {
+        className={cn(styles.track, {
           [styles.trackInverse]: mode === ProgressBarMode.LIGHT,
         })}
         ref={track}

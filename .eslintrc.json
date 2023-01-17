@@ -48,6 +48,7 @@
     "@typescript-eslint/triple-slash-reference": "off",
     "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/no-extraneous-class": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
 
     "react/function-component-definition": "off",
     "react/jsx-filename-extension": "off",

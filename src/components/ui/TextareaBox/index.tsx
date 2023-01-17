@@ -1,5 +1,7 @@
+import cn from 'classnames';
+
 import { FC, useState } from 'react';
-import classNames from 'classnames';
+
 import styles from './TextareaBox.module.scss';
 
 interface ITextareaBox {
@@ -12,18 +14,18 @@ export const TextareaBox: FC<ITextareaBox> = ({ label, className }) => {
 
   return (
     <div
-      className={classNames(styles.box, className, {
+      className={cn(styles.box, className, {
         [styles.filled]: Boolean(value),
       })}
     >
       <textarea
-        className={classNames(styles.textarea, {
+        className={cn(styles.textarea, {
           [styles.filled]: Boolean(value),
         })}
         onChange={(e) => setValue(e.target.value)}
       />
       <p
-        className={classNames(styles.label, {
+        className={cn(styles.label, {
           [styles.pinned]: Boolean(value),
         })}
       >

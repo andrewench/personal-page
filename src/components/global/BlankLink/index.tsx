@@ -1,6 +1,8 @@
-import { FC, ReactNode } from 'react';
+import cn from 'classnames';
+
 import Link from 'next/link';
-import classNames from 'classnames';
+
+import { FC, ReactNode } from 'react';
 
 interface IBlankLink {
   className?: string;
@@ -16,12 +18,7 @@ export const BlankLink: FC<IBlankLink> = ({
   children,
 }) => {
   return (
-    <Link
-      href={href}
-      target="_blank"
-      className={classNames(className)}
-      title={title}
-    >
+    <Link href={href} target="_blank" className={cn(className)} title={title}>
       {children}
     </Link>
   );

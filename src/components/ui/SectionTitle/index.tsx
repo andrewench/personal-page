@@ -1,8 +1,12 @@
+import cn from 'classnames';
+
 import { FC, memo } from 'react';
-import classNames from 'classnames';
 import { IoAt, IoGitBranchOutline } from 'react-icons/io5';
-import { Container } from '@components:global';
-import { FlexAlignOnMainAxis } from '@types';
+
+import { FlexContainer } from '@/components/global';
+
+import { FlexAlignOnMainAxis } from '@/types';
+
 import styles from './SectionTitle.module.scss';
 
 export enum CLIMode {
@@ -25,40 +29,37 @@ export const SectionTitle: FC<ISectionTitle> = memo(function SectionTitle({
   cli: { user, branch, command, mode },
 }) {
   return (
-    <Container flex className={classNames(styles.box, className)}>
-      <Container
-        flex
-        className={classNames(styles.PS1, {
+    <FlexContainer className={cn(styles.box, className)}>
+      <FlexContainer
+        className={cn(styles.PS1, {
           [styles.PS1Inverse]: mode === CLIMode.DARK,
         })}
       >
-        <Container
-          flex
+        <FlexContainer
           align={FlexAlignOnMainAxis.CENTER}
           className={styles.user}
         >
           <IoAt className={styles.icon} />
           {user}
-        </Container>
+        </FlexContainer>
 
-        <Container
-          flex
+        <FlexContainer
           align={FlexAlignOnMainAxis.CENTER}
           className={styles.branch}
         >
           <IoGitBranchOutline className={styles.icon} />
           {branch}
-        </Container>
-      </Container>
+        </FlexContainer>
+      </FlexContainer>
 
       <p
-        className={classNames(styles.command, 'blink-cursor', {
+        className={cn(styles.command, 'blink-cursor', {
           [styles.textInverse]: mode === CLIMode.DARK,
           'blink-inverse': mode === CLIMode.LIGHT,
         })}
       >
         {command}
       </p>
-    </Container>
+    </FlexContainer>
   );
 });

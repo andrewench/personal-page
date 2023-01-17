@@ -1,12 +1,14 @@
-import { FC, ReactNode, memo } from 'react';
-import classNames from 'classnames';
-import { FlexAlignOnMainAxis, FlexAlignOnCrossAxis } from '@types';
-import styles from './Container.module.scss';
+import cn from 'classnames';
 
-interface IContainer {
+import { FC, ReactNode, memo } from 'react';
+
+import { FlexAlignOnCrossAxis, FlexAlignOnMainAxis } from '@/types';
+
+import styles from './FlexContainer.module.scss';
+
+interface IFlexContainer {
   id?: string;
   className?: string;
-  flex: boolean;
   grid?: boolean;
   align?: FlexAlignOnMainAxis;
   content?: FlexAlignOnCrossAxis;
@@ -15,10 +17,9 @@ interface IContainer {
   children: ReactNode;
 }
 
-export const Container: FC<IContainer> = memo(function Container({
+export const FlexContainer: FC<IFlexContainer> = memo(function FlexContainer({
   id = '',
   className = '',
-  flex,
   column,
   grid,
   align,
@@ -29,9 +30,9 @@ export const Container: FC<IContainer> = memo(function Container({
   return (
     <div
       id={id}
-      className={classNames(
+      className={cn(
+        styles.flexContainer,
         {
-          [styles.flexContainer]: flex,
           [styles.flexCol]: column,
           [styles.flexFullCenter]: center,
           [styles.grid]: grid,

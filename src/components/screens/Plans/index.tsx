@@ -1,19 +1,24 @@
+import cn from 'classnames';
+
 import { memo } from 'react';
-import { Container, ScreenContainer } from '@components:global';
+
+import { FlexContainer, ScreenContainer } from '@/components/global';
+
 import {
-  SectionTitle,
   CLIMode,
-  ProgressBarBox,
   ProgressBar,
+  ProgressBarBox,
   ProgressBarMode,
-} from '@components:ui';
-import classNames from 'classnames';
-import { PlansList } from '@data';
+  SectionTitle,
+} from '@/components/ui';
+
+import { PlansList } from '@/data';
+
 import styles from './Plans.module.scss';
 
 export const Plans = memo(function Plans() {
   return (
-    <ScreenContainer anchor="plans" className={classNames(styles.box)}>
+    <ScreenContainer anchor="plans" className={cn(styles.box)}>
       <SectionTitle
         cli={{
           user: 'andrewench',
@@ -23,13 +28,13 @@ export const Plans = memo(function Plans() {
         }}
       />
 
-      <Container flex grid center className={styles.plans}>
+      <FlexContainer grid center className={styles.plans}>
         {PlansList.map(({ label, percent }, idx) => (
           <ProgressBarBox label={label} mode={ProgressBarMode.LIGHT} key={idx}>
             <ProgressBar percent={percent} mode={ProgressBarMode.LIGHT} />
           </ProgressBarBox>
         ))}
-      </Container>
+      </FlexContainer>
     </ScreenContainer>
   );
 });

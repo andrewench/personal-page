@@ -8,10 +8,6 @@ export interface IGlobalContext {
       value: number;
       setScroll: ActionType<number>;
     };
-    // mobileMenu: {
-    //   isShow: boolean;
-    //   setShowMobileMenu: ActionType<boolean>;
-    // };
   };
 }
 
@@ -21,10 +17,6 @@ export const GlobalContext = createContext<IGlobalContext>({
       value: 0,
       setScroll: () => {},
     },
-    // mobileMenu: {
-    //   isShow: false,
-    //   setShowMobileMenu: () => {},
-    // },
   },
 });
 

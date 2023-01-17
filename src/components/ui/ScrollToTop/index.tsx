@@ -1,6 +1,7 @@
 import { memo } from 'react';
-import ScrollTo from 'react-scroll-into-view';
 import { HiArrowUp } from 'react-icons/hi2';
+import ScrollTo from 'react-scroll-into-view';
+
 import styles from './ScrollToTop.module.scss';
 
 export const ScrollToTop = memo(function ScrollToTop() {
