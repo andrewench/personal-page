@@ -1,0 +1,19 @@
+.box {
+  @apply sticky top-32 min-h-[6rem] min-w-[6rem] rounded-tl-md rounded-bl-md border-[1px] border-r-0 border-blog-palette--block-border bg-white text-center;
+}
+
+.time {
+  @apply gap-1 text-lg text-white;
+}
+
+.meta {
+  @apply rounded-tl-md bg-[#06b6d4] py-3;
+}
+
+.date {
+  @apply gap-1 text-base text-white;
+}
+
+.author {
+  @apply mx-auto py-4;
+}

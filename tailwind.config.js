@@ -20,6 +20,11 @@ module.exports = {
           },
         },
       },
+      colors: {
+        'blog-palette--gray': '#f3f3f3',
+        'blog-palette--post': '#fff',
+        'blog-palette--block-border': '#e7e7e7',
+      },
     },
   },
   plugins: [],

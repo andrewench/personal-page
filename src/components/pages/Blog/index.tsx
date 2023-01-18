@@ -1,8 +1,12 @@
 import React, { FC } from 'react';
 
-import { BaseLayout } from '@/components/global';
+import { PostItem, Wall, WallSideBar } from '@/components/layout';
+
+import { BaseLayout, FlexContainer } from '@/components/global';
 
 import { IGithubApiResponse } from '@/types';
+
+import styles from './Blog.module.scss';
 
 export const Blog: FC<{ user: IGithubApiResponse }> = ({ user }) => {
   return (
@@ -15,7 +19,12 @@ export const Blog: FC<{ user: IGithubApiResponse }> = ({ user }) => {
       }}
       user={user}
     >
-      <div style={{ height: '1000px', background: '#333' }}>Blog</div>
+      <FlexContainer className={styles.box}>
+        <Wall>
+          <PostItem />
+        </Wall>
+        <WallSideBar />
+      </FlexContainer>
     </BaseLayout>
   );
 };

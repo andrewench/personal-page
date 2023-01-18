@@ -1,0 +1,17 @@
+.box {
+  @apply mb-8 min-h-[300px] items-start px-6;
+}
+
+.content {
+  @apply rounded-tr-md rounded-br-md rounded-bl-md border-[1px] bg-blog-palette--block-border bg-blog-palette--post p-8;
+  min-height: inherit;
+  box-shadow: 10px 20px 30px #00000007;
+}
+
+.text {
+  @apply indent-6 text-base leading-6 text-zinc-500;
+}
+
+.imageContainer {
+  @apply relative mt-4 h-[300px] w-full;
+}

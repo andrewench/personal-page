@@ -57,19 +57,21 @@ export const Header: FC<{
       >
         <Logotype title="andrewench" description="\> about.me();" />
 
-        <MemoComponent className={styles.nav}>
-          {HeaderLinks.map(({ hash, label }, idx) => (
-            <HeaderLink
-              anchor={hash}
-              className={cn(styles.link, {
-                [styles.activeLink]: router.asPath.substring(1) === hash,
-              })}
-              key={idx}
-            >
-              {label}
-            </HeaderLink>
-          ))}
-        </MemoComponent>
+        {router.pathname === '/' && (
+          <MemoComponent className={styles.nav}>
+            {HeaderLinks.map(({ hash, label }, idx) => (
+              <HeaderLink
+                anchor={hash}
+                className={cn(styles.link, {
+                  [styles.activeLink]: router.asPath.substring(1) === hash,
+                })}
+                key={idx}
+              >
+                {label}
+              </HeaderLink>
+            ))}
+          </MemoComponent>
+        )}
 
         <HamburgerMenu />
       </FlexContainer>
